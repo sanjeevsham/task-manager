@@ -1,0 +1,32 @@
+.sidebar {
+    display: inline-flex;
+    height: 41px;
+    align-items: center;
+    .nav {
+      list-style: none;
+      padding: 0;
+      display: inline-flex;
+      margin: 0px;
+      gap: 10px;
+      .menu-btn {
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+        color: #000000;
+        background-color: transparent;
+        border: 1px solid #ddd;
+        gap: 10px;
+        display: inline-flex;
+        align-items: center;
+        i{
+          font-size: 16px;
+        }
+        &.active,
+        &:hover {
+          background: #4a90e2;
+          color: #fff;
+        }
+      }
+    }
+  }

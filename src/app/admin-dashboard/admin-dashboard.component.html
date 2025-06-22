@@ -1,0 +1,65 @@
+<div class="admin-dashboard">
+    <div class="main-content">  
+      <div class="overview">
+        <div class="card">
+          <div class="icon"><i class="bi bi-card-list"></i></div>
+          <div class="label">Total Task</div>
+          <div class="value">{{totalTasks.length}}</div>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="bi bi-card-checklist"></i></div>
+          <div class="label">Task Accepted</div>
+          <div class="value">{{taskAccepted?.length}}/{{totalTasks.length}}</div>
+        </div>
+        <!-- <div class="card">
+          <div class="icon"><i class="bi bi-clock"></i></div>
+          <div class="label">Time spent</div>
+          <div class="value">1022 /1300 Hrs</div>
+        </div> -->
+        <div class="card">
+          <div class="icon"><i class="bi bi-people"></i></div>
+          <div class="label">Resources</div>
+          <div class="value">{{this.totalUser?.length}}</div>
+        </div>
+      </div>
+      <div class="project-summary">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Created On</th>
+              <th>Created By</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Assigned To</th>
+              <th>Due Date</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of totalTasks">
+              <!-- TITLE -->
+              <td>{{ task.title }}</td>
+              <td>{{ task.createdOn }}</td>
+              <td>{{ task.createdBy }}</td>
+              <td>{{ task.description }}</td>
+              <td class="status" [ngClass]="{'ongoing':   task.status === 'In Progress','risk':task.status === 'To Do','completed': task.status === 'Completed'}">{{ task.status }}</td>
+              <td>{{ task.assignedTo }}</td>
+              <td>{{ task.dueDate }}</td>
+              <td>{{ task.priority }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <div class="right-cards">
+        <div class="card progress-meter">
+          <div class="label">Overall Progress</div>
+          <div class="gauge"></div>
+        </div>
+        <div class="card">
+          <div class="label">Projects Workload</div>
+          <p>Chart preview</p>
+        </div>
+      </div> -->
+    </div>
+</div>

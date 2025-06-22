@@ -1,0 +1,193 @@
+.user-container {
+    padding: 20px;
+    .user-head{
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      h3{
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-size: 18px;
+        display: inline-flex;
+        align-items: center;
+        em{
+          font-size: 24px;
+          margin-right: 8px;
+          width: 35px;
+          height: 35px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          background: #6cd26c;
+          border-radius: 10px;
+        }
+      }
+      .create-user-btn{
+        border: none;
+        padding: 8px 15px;
+        margin-right: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        background-color: #4a90e2;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        em{
+          font-size: 19px;
+          margin-left: 5px;
+        }
+      }
+    }
+    .filters {
+      margin-bottom: 15px;
+      button {
+        border: none;
+        padding: 8px 15px;
+        margin-right: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        &.active {
+          background-color: #4a90e2;
+          color: #fff;
+        }
+      }
+    }
+    .user-list{
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      .user-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        overflow-x: auto;
+        .actions {
+          display: flex;
+          gap: 0.5rem;
+          margin-left: 1rem;
+      
+          button {
+            padding: 0.35rem 0.8rem;
+            font-size: 0.85rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+      
+            &:hover {
+              opacity: 0.9;
+            }
+      
+            &.delete {
+              background: #ff5c5c;
+              color: #fff;
+            }
+      
+            &:not(.delete) {
+              background: #007bff;
+              color: #fff;
+            }
+          }
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          th,
+          td {
+            text-align: left;
+            padding: 0.8rem;
+          }
+          thead{
+            border-bottom: 1px solid #ddd;
+          }
+          .status {
+            border-radius: 25px;
+            padding: 0px 10px;
+            font-size: 0.85rem;
+            height: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0px;
+            &.completed {
+              background: #e6f9ec;
+              color: #2e8b57;
+              border: 1px solid #2e8b57;
+            }
+            &.delayed {
+              background: #fff3cd;
+              color: #856404;
+              border: 1px solid #856404;
+            }
+            &.risk {
+              background: #f8d7da;
+              color: #721c24;
+              border: 1px solid #721c24;
+            }
+            &.ongoing {
+              background: #e2e3ff;
+              color: #383d92;
+              border: 1px solid #383d92;
+            }
+          }
+        }
+      }
+    }
+  }
+  .cs-form-dialog{
+    height: calc(100vh - 30px);
+    .user-form {
+      max-width: 600px;
+      margin: auto;
+      min-width: 500px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      .form-group {
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        label {
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          // color: #333;
+        }
+        input, textarea, select {
+          padding: 0.75rem 1rem;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          font-size: 1rem;
+          transition: border 0.3s;
+          &:focus {
+            outline: none;
+            border-color: #4a90e2;
+          }
+        }
+    
+        textarea {
+          resize: vertical;
+        }
+      }
+    
+      button {
+        width: 100%;
+        padding: 0.75rem;
+        background: #4a90e2;
+        color: #fff;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+        &:hover {
+          background: #0056b3;
+        }
+      }
+    }
+  }

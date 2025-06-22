@@ -1,0 +1,64 @@
+{
+  "tasks": [
+    {
+      "title": "File Managementa",
+      "createdOn": "2025-06-16",
+      "createdBy": "Sanjeev",
+      "description": "Create a document",
+      "status": "To Do",
+      "assignedTo": "sham",
+      "dueDate": null,
+      "priority": "Low",
+      "id": "bbce"
+    }
+  ],
+  "theame": {
+    "darkTheme": true
+  },
+  "users": [
+    {
+      "id": "8491",
+      "username": "Sanjeev",
+      "password": "$anjeev11",
+      "type": "Admin",
+      "email": "sanjeev.n@gmail.com",
+      "desigination": "Frontend Developer",
+      "managed": "Managed by chainsys.com",
+      "completed": false,
+      "editing": false
+    },
+    {
+      "id": "a5f1",
+      "username": "qsd",
+      "password": "qsd",
+      "type": "qwsd",
+      "email": "qsd",
+      "desigination": "qsdx",
+      "managed": "qsd",
+      "completed": false,
+      "editing": false
+    }
+  ],
+  "logedinUserInfo": [
+    {
+      "id": "fc38",
+      "username": "Sanjeev",
+      "password": "$anjeev11",
+      "email": "sanjeev.n@gmail.com",
+      "desigination": "Frontend Developer",
+      "managed": "Managed by chainsys.com",
+      "avatarUrl": "",
+      "type": "Admin"
+    },
+    {
+      "id": "fc38",
+      "username": "Sanjeev",
+      "password": "$anjeev11",
+      "email": "sanjeev.n@gmail.com",
+      "desigination": "Frontend Developer",
+      "managed": "Managed by chainsys.com",
+      "avatarUrl": "",
+      "type": "Admin"
+    }
+  ]
+}

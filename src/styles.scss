@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+
+body{
+  margin: 0px;
+  font-family:'Roboto', sans-serif;
+  &.dark-theme {
+    background: #1e1e1e;
+    color: #f1f1f1;
+    .task-manager-header{
+      border-bottom: 1px solid #666;
+    }
+    .account-card,.admin-dashboard,.task-container,.user-container {
+      background: #2a2a2a;
+      border-color: #444;
+      .description {
+        color: #ccc;
+      }
+      input,
+      button,textarea, select {
+        background-color: #444;
+        color: #f1f1f1;
+        border-color: #666;
+      }
+      button.delete {
+        background-color: #cc3c3c;
+      }
+      .card,.project-summary,.task-list,.user-list{
+        @extend .sections-dark-theme;
+      }
+    }
+    .login-page{
+      .login-container {
+        background-color: #2a2a2a !important;
+        border-color: #444;
+        .login-form {
+          h2 {
+            color: #4a90e2;
+          }
+          .input-group {
+            label {
+              color: #f1f1f1 !important;
+            }
+            input {
+              background-color: #444;
+              color: #f1f1f1;
+              border-color: #666;
+              &:focus {
+                border-color: #4a90e2;
+              }
+            }
+          }
+          button {
+            background-color: #4a90e2;
+            color: #fff;
+            &:hover {
+              background-color: darken(#4a90e2, 5%);
+            }
+          }
+          .signup-link {
+            a {
+              color: #4a90e2;
+            }
+          }
+        }
+      }
+    }
+    .sidebar{
+      .nav{
+        .menu-btn{
+          color: #fff !important;
+          border: 1px solid #666 !important;
+        }
+      }
+    }
+    .task-form,.user-form{
+      @extend .sections-dark-theme;
+      input,textarea, select {
+        background-color: #444;
+        color: #f1f1f1;
+        border-color: #666;
+      }
+    }
+  }
+}
+.sections-dark-theme{
+  background: #2a2a2a !important;
+  border: 1px solid #666 !important;
+  &:hover {
+    background: #404041;
+  }
+  .icon{
+    border: 1px solid #666 !important;
+  }
+}
+.mdc-dialog__container{
+  .mat-mdc-dialog-surface{
+    border-radius: 12px;
+  }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

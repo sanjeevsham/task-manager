@@ -1,0 +1,117 @@
+.admin-dashboard {
+    display: flex;
+    height: calc(100vh - 52px);
+    background: #fff;  
+    .main-content {
+      flex: 1;
+      padding: 1.5rem;
+      overflow-y: auto;  
+      .overview {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        .card {
+          flex: 1;
+          background: #fff;
+          border-radius: 10px;
+          padding: 1rem;
+          border: 1px solid #ddd;
+          .icon{
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            i{
+              font-size: 16px;
+            }
+          }
+          .label {
+            font-size: 0.9rem;
+            margin-top: 5px;
+          }
+  
+          .value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 0.3rem;
+          }
+        }
+      }
+  
+      .project-summary {
+        background: #fff;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        border: 1px solid #ddd;
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          th,
+          td {
+            text-align: left;
+            padding: 0.8rem;
+          }
+          thead{
+            border-bottom: 1px solid #ddd;
+          }
+          .status {
+            border-radius: 25px;
+            padding: 0px 10px;
+            font-size: 0.85rem;
+            height: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0px;
+            &.completed {
+              background: #e6f9ec;
+              color: #2e8b57;
+              border: 1px solid #2e8b57;
+            }
+            &.delayed {
+              background: #fff3cd;
+              color: #856404;
+              border: 1px solid #856404;
+            }
+            &.risk {
+              background: #f8d7da;
+              color: #721c24;
+              border: 1px solid #721c24;
+            }
+            &.ongoing {
+              background: #e2e3ff;
+              color: #383d92;
+              border: 1px solid #383d92;
+            }
+          }
+        }
+      }
+  
+      .right-cards {
+        display: flex;
+        gap: 1rem;
+  
+        .card {
+          flex: 1;
+          background: #fff;
+          border-radius: 10px;
+          padding: 1rem;
+          border: 1px solid #ddd;
+          .label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+          }
+  
+          .gauge {
+            height: 120px;
+            background: linear-gradient(to right, green 72%, #ddd 0%);
+            border-radius: 60px;
+          }
+        }
+      }
+    }
+  }
+  

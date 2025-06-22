@@ -1,0 +1,104 @@
+<div class="task-container">
+  <div class="task-head">
+    <h3><em class="bi bi-list-task"></em>Task List</h3>
+    <button class="create-task-btn" (click)="openForm(formFields)">Create New Task <em class="bi bi-plus-lg"></em></button>
+  </div>
+  <div class="filters">
+    <button type="button" (click)="setFilter('all')" [class.active]="filter === 'all'">All</button>
+    <button type="button" (click)="setFilter('completed')" [class.active]="filter === 'completed'">Completed</button>
+    <button type="button" (click)="setFilter('inProgress')" [class.active]="filter === 'inProgress'">inProgress</button>
+  </div>
+  <div class="task-list">
+    <div class="task-item">
+      <table class="task-table" *ngIf="filteredTasks">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Created On</th>
+            <th>Created By</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Assigned To</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of filteredTasks">
+            <td>{{ task.title }}</td>
+            <td>{{ task.createdOn }}</td>
+            <td>{{ task.createdBy }}</td>
+            <td>{{ task.description }}</td>
+            <td class="status" [ngClass]="{'ongoing':   task.status === 'In Progress','risk':task.status === 'To Do','completed': task.status === 'Completed'
+            }">{{ task.status }}</td>
+            <td>{{ task.assignedTo }}</td>
+            <td>{{ task.dueDate }}</td>
+            <td>{{ task.priority }}</td>
+            <td class="actions">
+              <ng-container>
+                <button (click)="onEdit(formFields,task)">Edit</button>
+                <button class="delete" (click)="deleteTask(task)">Delete</button>
+              </ng-container>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  </div>
+</div>
+
+<ng-template #formFields>
+  <form [formGroup]="formGroup" class="task-form" (ngSubmit)="addTask()">
+    <h2>{{ isEditMode ? 'Edit Task' : 'Create Task' }}</h2>
+    <div class="form-group">
+      <label>Title</label>
+      <input formControlName="title" type="text" placeholder="Enter title" />
+    </div>
+  
+    <div class="form-group">
+      <label>Created On</label>
+      <input formControlName="createdOn" type="date" />
+    </div>
+  
+    <div class="form-group">
+      <label>Created By</label>
+      <input formControlName="createdBy" type="text" placeholder="Creator's name" />
+    </div>
+  
+    <div class="form-group">
+      <label>Description</label>
+      <textarea formControlName="description" rows="3" placeholder="Describe the task..."></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label>Status</label>
+      <select formControlName="status">
+        <option value="To Do">To Do</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label>Assigned To</label>
+      <input formControlName="assignedTo" type="text" placeholder="Assignee name" />
+    </div>
+  
+    <div class="form-group">
+      <label>Due Date</label>
+      <input formControlName="dueDate" type="date" />
+    </div>
+  
+    <div class="form-group">
+      <label>Priority</label>
+      <select formControlName="priority">
+        <option value="">-- Select Priority --</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+    <button type="submit">{{ isEditMode ? 'Update Task' : 'Create Task' }}</button>
+  </form>
+</ng-template>

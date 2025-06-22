@@ -1,0 +1,75 @@
+<div class="user-container">
+    <div class="user-head">
+      <h3><em class="bi bi-list-task"></em>User List</h3>
+      <button class="create-user-btn" (click)="openForm(formFields)">Create New User<em class="bi bi-plus-lg"></em></button>
+    </div>
+    <div class="user-list">
+      <div class="user-item">
+        <table class="user-table" *ngIf="users">
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Password</th>
+              <th>User Type</th>
+              <th>Email</th>
+              <th>Desigination</th>
+              <th>Manager</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.username }}</td>
+              <td>{{ user.password }}</td>
+              <td>{{ user.type }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.desigination }}</td>
+              <td>{{ user.managed }}</td>
+              <td class="actions">
+                <ng-container>
+                  <button (click)="onEdit(formFields,user)">Edit</button>
+                  <button class="delete" (click)="deleteUser(user)">Delete</button>
+                </ng-container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    </div>
+  </div>
+  
+  <ng-template #formFields>
+    <form [formGroup]="formGroup" class="user-form" (ngSubmit)="addUser()">
+      <h2>{{ isEditMode ? 'Edit User' : 'Create User' }}</h2>
+      <div class="form-group">
+        <label>User Name</label>
+        <input formControlName="username" type="text" placeholder="Enter User Name" />
+      </div>
+    
+      <div class="form-group">
+        <label>Password</label>
+        <input formControlName="password" type="password" />
+      </div>
+    
+      <div class="form-group">
+        <label>User Type</label>
+        <input formControlName="type" type="text" placeholder="Enter user type" />
+      </div>
+    
+      <div class="form-group">
+        <label>Email</label>
+        <textarea formControlName="email"  placeholder="Enter Email id"></textarea>
+      </div>
+    
+      <div class="form-group">
+        <label>Desigination</label>
+        <input formControlName="desigination" type="text" placeholder="Enter Desigination" />
+      </div>
+    
+      <div class="form-group">
+        <label>Manager</label>
+        <input formControlName="managed" type="Enter Manager Name" />
+      </div>
+
+      <button type="submit">{{ isEditMode ? 'Update User' : 'Create User' }}</button>
+    </form>
+  </ng-template>

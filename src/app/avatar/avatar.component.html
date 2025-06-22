@@ -1,0 +1,39 @@
+<div class="avatar-wrapper" (click)="userPopup = !userPopup" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+  <div class="avatar" [title]="user?.username" *ngIf="isUserActive" [ngStyle]="{ 'background-color': getBackgroundColor(user?.username ?? '') }">
+    <img *ngIf="user?.avatarUrl; else initials" [src]="user?.avatarUrl" alt="avatar" />
+    <ng-template #initials>
+      <span class="initials">{{ getInitials(user?.username ?? '') }}</span>
+    </ng-template>
+  </div>
+</div>
+
+<!-- This template displays the overlay content and is connected to the button -->
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="userPopup" [cdkConnectedOverlayHasBackdrop]="true" cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop" (backdropClick)="userPopup = false" (detach)="userPopup = false">
+  <div class="account-card">
+    <div class="header">
+      <i class="bi bi-x-lg" (click)="userPopup = false"></i>
+      <p class="email">{{user?.email}}</p>
+      <p class="managed">{{user?.managed}}</p>
+      <button class="close-btn"></button>
+    </div>
+    <div class="avatar-section">
+      <div class="avatar" [title]="user?.username" *ngIf="user?.username" [ngStyle]="{ 'background-color': getBackgroundColor(user?.username ?? '') }">
+        <img *ngIf="user?.avatarUrl; else initials" [src]="user?.avatarUrl" alt="avatar" />
+        <ng-template #initials>
+          <span class="initials">{{ getInitials(user?.username ?? '') }}</span>
+        </ng-template>
+      </div>
+      <p class="greeting">Hi, {{user?.username}}!</p>
+    </div>
+    <div class="actions">
+      <!-- <select id="themeSelect" [(ngModel)]="selectedTheme" (change)="toggleTheme()">
+        <option *ngFor="let theme of themes" [value]="theme.value">{{ theme.label }}</option>
+      </select> -->
+        <button (click)="toggleTheme()">
+          <i class="bi" [ngClass]="darkTheme ? 'bi-moon-stars-fill' : 'bi-brightness-high-fill'"></i>
+          {{ darkTheme ? 'Dark Mode ' : 'Light Mode' }}
+        </button>
+      <button class="sign-out" (click)="signOut(user)">Sign out <i class="bi bi-box-arrow-in-right"></i></button>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,7 @@
+<div class="sidebar" *ngIf="dashboardActive || taskActive || userActive" >
+    <ul class="nav">
+      <button class="menu-btn" [ngClass]="dashboardActive ? 'active' : ''" (click)="menuClick('dashboard')"><i class="bi bi-grid"></i>Dashboard</button>
+      <button class="menu-btn" [ngClass]="taskActive ? 'active' : ''" (click)="menuClick('task')"><i class="bi bi-card-list"></i>Tasks</button>
+      <button class="menu-btn" [ngClass]="userActive ? 'active' : ''" (click)="menuClick('user')"><i class="bi bi-people"></i>Users</button>
+    </ul>
+</div>
