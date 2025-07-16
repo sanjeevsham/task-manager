@@ -26,9 +26,6 @@
       <p class="greeting">Hi, {{user?.username}}!</p>
     </div>
     <div class="actions">
-      <!-- <select id="themeSelect" [(ngModel)]="selectedTheme" (change)="toggleTheme()">
-        <option *ngFor="let theme of themes" [value]="theme.value">{{ theme.label }}</option>
-      </select> -->
         <button (click)="toggleTheme()">
           <i class="bi" [ngClass]="darkTheme ? 'bi-moon-stars-fill' : 'bi-brightness-high-fill'"></i>
           {{ darkTheme ? 'Dark Mode ' : 'Light Mode' }}

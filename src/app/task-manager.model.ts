@@ -1,16 +1,16 @@
 export interface User {
-    id?:number
-    username:string,
-    password:string,
-    type?:string,
+    id?:string;
+    username:string;
+    password:string;
+    type?:string;
     avatarUrl?: string;
-    email:string,
-    desigination:string,
-    managed:string,
+    email:string;
+    desigination:string;
+    managed:string;
     editing?:boolean;
 }
 export interface Task {
-    id?: number;
+    id?: string;
     title: string;
     description: string;
     status: 'To Do' | 'In Progress' | 'Completed';

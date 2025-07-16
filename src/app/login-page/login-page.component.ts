@@ -14,7 +14,7 @@ import { TaskService } from '../task-manager.service';
 })
 export class LoginPageComponent {
   formGroup: FormGroup;
-  private apiUrlUsers = 'http://localhost:3000/users'
+  private apiUrlUsers = 'http://localhost:3000/api/users'
   constructor(private fb: FormBuilder,private http: HttpClient,private router: Router,private taskService: TaskService) {
       this.formGroup = this.fb.group({
         username: [''],

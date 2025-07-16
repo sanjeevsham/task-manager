@@ -24,10 +24,4 @@ export class AppComponent implements OnInit {
       }
     });
   }
-  // toggleTheme(): void {
-  //   this.taskService.toggleTheme(this.darkTheme);
-  //   if (isPlatformBrowser(this.platformId)) {
-  //     document.body.classList.toggle('dark-theme', !this.darkTheme);
-  //   }
-  // }
 }

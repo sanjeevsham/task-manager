@@ -9,7 +9,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-// import { trigger, transition, style, animate } from '@angular/animations';
 @Component({
   selector: 'app-task-list',
   standalone: true,
@@ -19,17 +18,6 @@ import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
   styleUrls: ['./task-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.Default,
   encapsulation:ViewEncapsulation.None,
-  // animations: [
-  //   trigger('fadeSlide', [
-  //     transition(':enter', [
-  //       style({ opacity: 0, transform: 'translateY(20px)' }),
-  //       animate('300ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
-  //     ]),
-  //     transition(':leave', [
-  //       animate('200ms ease-in', style({ opacity: 0, transform: 'translateY(-10px)' }))
-  //     ])
-  //   ])
-  // ]
 })
 export class TaskListComponent implements OnInit {
   formGroup: FormGroup;

@@ -65,9 +65,6 @@ export class UserComponent {
       this.taskService.deleteUser(user.id);
     } 
   }
-  // toggleTask(user: User): void {
-  //   this.taskService.toggleTask(user);
-  // }
   updateTask(user: User): void {
     this.isEditMode = false;
     user.id = this.backupUser?.id
